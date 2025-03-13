@@ -17,55 +17,61 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Form Validation for Message Us
-    function validateForm(event) {
-        event.preventDefault(); // Prevent default form submission
+// Form Validation for Message Us
+function validateForm(event) {
+    event.preventDefault(); // Prevent default form submission
 
-        let name = document.getElementById("name-input").value.trim();
-        let birthday = document.getElementById("birthday-input").value;
-        let gender = document.querySelector('input[name="gender"]:checked');
-        let contact = document.getElementById("contact-input").value.trim();
-        let message = document.getElementById("message-input").value.trim();
+    let name = document.getElementById("name-input").value.trim();
+    let birthday = document.getElementById("birthday-input").value;
+    let gender = document.querySelector('input[name="gender"]:checked');
+    let email = document.getElementById("email-input").value.trim();
+    let contact = document.getElementById("contact-input").value.trim();
+    let message = document.getElementById("message-input").value.trim();
 
-        if (name === "") {
-            alert("Please enter your name.");
-            return;
-        }
-
-        if (birthday === "") {
-            alert("Please select your date of birth.");
-            return;
-        }
-
-        if (!gender) {
-            alert("Please select your gender.");
-            return;
-        }
-
-        if (contact === "" || !/^[0-9]{10,15}$/.test(contact)) {
-            alert("Enter a valid Contact Number (10-15 digits).");
-            return;
-        }
-
-        if (message === "") {
-            alert("Please enter your message.");
-            return;
-        }
-
-        // Show popup output after successful submission
-        alert(
-            `Form Submitted Successfully!\n\nName: ${name}\nDate of Birth: ${birthday}\nGender: ${gender.value}\nContact: ${contact}\nMessage: ${message}`
-        );
-
-        // Reset form after submission
-        document.getElementById("messageForm").reset();
+    if (name === "") {
+        alert("Please enter your name.");
+        return;
     }
 
-    // Attach Form Validation to Submit Button
-    let form = document.getElementById("messageForm");
-    if (form) {
-        form.addEventListener("submit", validateForm);
+    if (birthday === "") {
+        alert("Please select your date of birth.");
+        return;
     }
+
+    if (!gender) {
+        alert("Please select your gender.");
+        return;
+    }
+
+    if (email === "" || !/^\S+@\S+\.\S+$/.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    if (contact === "" || !/^[0-9]{10,15}$/.test(contact)) {
+        alert("Enter a valid Contact Number (10-15 digits).");
+        return;
+    }
+
+    if (message === "") {
+        alert("Please enter your message.");
+        return;
+    }
+
+    // Show popup output after successful submission
+    alert(
+        `Form Submitted Successfully!\n\nName: ${name}\nDate of Birth: ${birthday}\nGender: ${gender.value}\nEmail: ${email}\nContact: ${contact}\nMessage: ${message}`
+    );
+
+    // Reset form after submission
+    document.getElementById("messageForm").reset();
+}
+
+// Attach Form Validation to Submit Button
+let form = document.getElementById("messageForm");
+if (form) {
+    form.addEventListener("submit", validateForm);
+}
 
     // Autoslide Banner Functionality
     let bannerIndex = 0;

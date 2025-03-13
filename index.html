@@ -108,10 +108,10 @@
         <form id="messageForm">
             <label for="name-input">Name:</label>
             <input type="text" id="name-input" name="name" placeholder="Your Name" required>
-
+    
             <label for="birthday-input">Date of Birth:</label>
             <input type="date" id="birthday-input" name="birthday" required>
-
+    
             <label>Gender:</label>
             <div class="gender-options">
                 <input type="radio" id="male" name="gender" value="Male" required>
@@ -119,16 +119,19 @@
                 <input type="radio" id="female" name="gender" value="Female" required>
                 <label for="female">Female</label>
             </div>
-
+    
+            <label for="email-input">Email:</label>
+            <input type="email" id="email-input" name="email" placeholder="Your Email" required>
+    
             <label for="contact-input">Contact Number:</label>
             <input type="tel" id="contact-input" name="contact" placeholder="Your Phone Number" required pattern="[0-9]{10,15}">
-
+    
             <label for="message-input">Message:</label>
             <textarea id="message-input" name="message" placeholder="Your Message" required></textarea>
-
+    
             <button type="submit">Submit</button>
         </form>
-    </div>
+    </div>    
   </section>
 
     </main>
