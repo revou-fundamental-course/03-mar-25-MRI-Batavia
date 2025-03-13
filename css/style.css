@@ -1,58 +1,212 @@
-/* this is css file*/
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
 
+/* Header Section */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #ccc;
 }
 
-.main-logo {
+/* Profile Picture Styling */
+.profile-picture {
     height: 50px;
     width: 50px;
-    background-image: url(https://picsum.photos/200);
+    background-image: url(assets/images/profile-picture.jpeg);
     background-position: center;
     background-size: cover;
     border-radius: 50%;
 }
 
+/* Navigation Bar */
 nav {
     display: flex;
+    gap: 10px;
 }
 
-nav>a {
-    padding: 8px;
-    border: 1px solid;
+nav a {
+    padding: 10px 15px;
+    border: 1px solid black;
     text-decoration: none;
     color: black;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Style khusus untuk tombol "Change Name" */
+#button {
+    display: block;
+    margin: 10px auto; /* Posisikan ke tengah secara horizontal */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#button:hover {
+    background-color: #218838;
+}
+
+/* Banner Section with Auto-slide */
+.banner-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.banner-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .banner-img {
-    border: 1px solid;
-    height: 500px;
+    width: 100%;
+    height: auto; /* Gambar menyesuaikan tinggi secara otomatis */
+    display: none;
 }
 
-.our-profile-content {
-    border: 1px solid;
-    height: 500px;
-    align-content: center;
-    text-align: center;
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    display: none; /* Default-nya disembunyikan */
 }
 
+
+/* Section Styling */
+section {
+    padding: 40px;
+}
+
+/* Menghapus border dan background pada About My School, Vision & Mission, Achievements */
+.profile-content,
+.vision-mission-content,
 .achievement-content {
-    border: 1px solid;
-    height: 500px;
-    align-content: center;
-    text-align: center;
+    border: none;
+    background: none;
+    padding: 20px 0; /* Hanya memberikan padding atas & bawah */
+    width: 80%;
+    margin: 0 auto;
+    
+    /* Rata kiri */
+    text-align: left;
 }
 
+/* School Logo Styling */
+.school-logo {
+    display: block; /* Agar logo tidak mengganggu teks */
+    margin: 10px auto; /* Memberi jarak di atas dan bawah serta posisi tengah */
+    width: 100px; /* Sesuaikan ukuran logo */
+    height: auto; /* Menjaga aspek rasio */
+}
+
+
+/* Mengecilkan ukuran Message Us */
 .message-us-content {
-    border: 1px solid;
-    height: 500px;
-    align-content: center;
-    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px auto;
+    width: 40%; /* Setengah dari ukuran sebelumnya (80%) */
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
-/* Styling for the Back to Top button */
+/* Vision & Mission Styling */
+.vision-mission-content h2 {
+    color: #007bff;
+}
+
+/* Message Us Form Styling */
+.message-us-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+/* Label dan Input dalam satu baris */
+.form-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Agar form tidak terlalu lebar */
+    margin-bottom: 10px;
+}
+
+/* Styling untuk Label */
+.form-group label {
+    width: 150px; /* Lebar label tetap */
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Styling untuk Input, Date, Textarea */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Gender Option Styling */
+.gender-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gender-group label {
+    font-weight: normal;
+}
+
+/* Textarea untuk pesan */
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Tombol Submit */
+.message-us-content button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.message-us-content button:hover {
+    background-color: #0056b3;
+}
+
+/* Back to Top Button */
 #backToTop {
     position: fixed;
     bottom: 20px;
@@ -65,14 +219,59 @@ nav>a {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    transition: background-color 0.3s;
 }
 
 #backToTop:hover {
     background-color: #0056b3;
 }
 
+/* Change Name Button */
+#button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin: 20px;
+}
 
+#button:hover {
+    background-color: #218838;
+}
+
+/* Footer */
 footer {
     text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Responsive Styles for Mobile */
+@media only screen and (max-width: 600px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .banner-container {
+        height: 200px;
+    }
+
+    .profile-content, 
+    .vision-mission-content, 
+    .achievement-content, 
+    .message-us-content {
+        width: 95%;
+    }
 }

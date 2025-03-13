@@ -4,20 +4,18 @@
 <head>
     <!-- Meta Data -->
     <meta charset="UTF-8">
-    <!-- For responsive purpose -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio M. Reza I.</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
-
 </head>
 
 <body>
     <!-- Main Header -->
     <header class="main-header">
-        <!-- Logo Website -->
-        <div class="main-logo"></div>
+        <!-- Profile Picture -->
+        <img class="profile-picture" alt="my-pfp" src="assets/images/profile-picture.jpeg" />
 
         <!-- Navigation -->
         <nav>
@@ -32,59 +30,116 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Home Content -->
+        <!-- Home Section with Banner Autoslide -->
         <section id="home">
             <header>
-                <h1>Hi User, Welcome to My Portfolio!</h1>
+                <h1>Hi <span id="name"></span>, Welcome to My Portfolio!</h1>
                 <p>Here you can see my profile, achievements, and message me</p>
+                <button id="button">Change Name</button>
             </header>
-
+            
             <!-- Banner Autoslide -->
-            <div class="banner-img"></div>
+            <div class="banner-container">
+                <img class="banner-img" src="assets/images/banner-1.jpg" alt="Banner 1">
+                <img class="banner-img" src="assets/images/banner-2.jpg" alt="Banner 2">
+                <img class="banner-img" src="assets/images/banner-3.jpg" alt="Banner 3">
+            </div>
         </section>
 
         <hr />
 
-        <!-- Our Profile Content -->
-        <section id="our-profile">
-            <header>
-                <h1>Our Profile</h1>
-            </header>
+        <!-- Our Profile Section -->
+<section id="our-profile">
+    <header>
+        <h1>About My School</h1>
+    </header>
+    <img src="assets/images/logo.png" alt="logo" class="school-logo">
+    
+    <div class="profile-content">
+        <p>My university is Gunadarma University, where I majored in Information Systems. It is a well-established institution in Indonesia, known for its strong focus on technology, business, and computer science. The university emphasizes practical learning, research, and innovation to prepare students for the evolving digital industry.</p>
+    </div>
+</section>
 
-            <div class="our-profile-content">
-                <p>TBA</p>
+
+        <hr />
+
+        <!-- Vision & Mission Section -->
+        <section id="vision-mission">
+            <header>
+                <h1>Vision & Mission</h1>
+            </header>
+            <div class="vision-mission-content">
+                <h2>Vision</h2>
+                <p>To become a skilled professional in Information Systems, continuously learning technological advancements.</p>
+
+                <h2>Mission</h2>
+                <ul>
+                    <li>To develop a strong foundation in information systems, programming, and data management</li>
+                    <li>To engage in continuous learning and self-improvement through academic studies and hands-on projects</li>
+                    <li>To apply knowledge in real-world scenarios through internships, research, or collaborative projects</li>
+                    <li>To stay updated with emerging technologies and best practices in the IT industry</li>
+                </ul>
             </div>
         </section>
 
-        <!-- Achievement Content -->
+        <hr />
+
+        <!-- Achievement Section -->
         <section id="achievement">
             <header>
                 <h1>Achievement</h1>
             </header>
-
             <div class="achievement-content">
-                <p>TBA</p>
+                <ul>
+                    <li>Developed a simple WiFi sales website using Visual Basic 6.0 (2021)</li>
+                    <li>Worked on a Capstone project involving data cleaning and analysis of the NTSB aircraft accident dataset using BigQuery, AWS Redshift, and AWS QuickSight as part of the MSIB Kampus Merdeka program at PT Revolusi Cita Edukasi(2024)</li>
+                </ul>
             </div>
         </section>
 
-        <!-- Message Us Content -->
-        <section id="message-us">
-            <header>
-                <h1>Message Us</h1>
-            </header>
+        <hr />
 
-            <div class="message-us-content">
-                <P>TBA</P>
+<!-- Message Us Section with Validation -->
+  <section id="message-us">
+    <header>
+        <h1>Message Us</h1>
+    </header>
+    <div class="message-us-content">
+        <form id="messageForm">
+            <label for="name-input">Name:</label>
+            <input type="text" id="name-input" name="name" placeholder="Your Name" required>
+
+            <label for="birthday-input">Date of Birth:</label>
+            <input type="date" id="birthday-input" name="birthday" required>
+
+            <label>Gender:</label>
+            <div class="gender-options">
+                <input type="radio" id="male" name="gender" value="Male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female" required>
+                <label for="female">Female</label>
             </div>
-        </section>
+
+            <label for="contact-input">Contact Number:</label>
+            <input type="tel" id="contact-input" name="contact" placeholder="Your Phone Number" required pattern="[0-9]{10,15}">
+
+            <label for="message-input">Message:</label>
+            <textarea id="message-input" name="message" placeholder="Your Message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+  </section>
+
     </main>
 
+
     <!-- Back to Top Button -->
-    <button id="backToTop" onclick="scrollToTop()">↑ Back to Top</button>
+    <button id="backToTop">↑ Back to Top</button>
 
     <!-- Sound Effect -->
     <audio id="soundEffect">
-        <source src="assets\sounds\whoosh.wav" type="audio/wav">
+        <source src="assets/sounds/whoosh.wav" type="audio/wav">
     </audio>
 
     <!-- Main Footer -->
@@ -92,9 +147,8 @@
         <p>&copy; 2025 Portfolio Reza</p>
     </footer>
 
-    <!-- JavaScript Path-->
+    <!-- JavaScript Path -->
     <script src="./js/script.js"></script>
-
 </body>
 
 </html>
